@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://i1mgn2tl4erl"]
+[gd_scene load_steps=6 format=3 uid="uid://i1mgn2tl4erl"]
 
 [ext_resource type="Script" uid="uid://ll6ibjwjbokl" path="res://TileSystem/tile.gd" id="1_em5vh"]
 [ext_resource type="Texture2D" uid="uid://djh7k7qpq7ap0" path="res://Sprites/DevSprites/square.png" id="1_ht7x0"]
+[ext_resource type="Shader" uid="uid://cw71pmp6ucsdo" path="res://TileSystem/tile.gdshader" id="3_sl6ug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl6ug"]
+shader = ExtResource("3_sl6ug")
+shader_parameter/sprite_color = Color(0.838897, 0.838897, 0.838897, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uec1m"]
+shader = ExtResource("3_sl6ug")
+shader_parameter/sprite_color = Color(1, 1, 1, 1)
 
 [node name="Tile" type="Node2D"]
 script = ExtResource("1_em5vh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sl6ug")
+texture = ExtResource("1_ht7x0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uec1m")
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_ht7x0")

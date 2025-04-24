@@ -15,6 +15,10 @@ run/main_scene="uid://ctq5bwxyhv6uk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SoundManager="*res://scripts/SoundManager.gd"
+
 [input]
 
 left_click={

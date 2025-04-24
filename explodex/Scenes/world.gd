@@ -36,3 +36,8 @@ func random_tile_remove(start_pos : Vector2):
 
 func _ready():
 	create_grid()
+	
+
+
+func _on_timer_timeout():
+	SoundManager.play(0)

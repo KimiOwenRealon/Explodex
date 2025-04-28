@@ -16,8 +16,8 @@ func create_grid():
 			var ti = t.instantiate()
 			add_child(ti)
 			var offset = Vector2((board_size_x*tile_size)/2-tile_size/2, (board_size_y*tile_size)/2-tile_size/2)
-			ti.position = Vector2(i*tile_size,j*tile_size) - offset
-			
+			ti.position = Vector2(i*tile_size,j*tile_size) - offset #game world position
+			ti.pos = Vector2(i,j) #board position
 			#add the tile to a dictianary, indexed by a vec2 e.g. first tile would be gotten by tiles.get(Vector2(0,0))
 			tiles.set(Vector2(i,j), ti)
 
@@ -35,6 +35,7 @@ func random_tile_remove(start_pos : Vector2):
 			t.queue_free()
 
 func _ready():
+	StateManager.world = self
 	create_grid()
 	
 

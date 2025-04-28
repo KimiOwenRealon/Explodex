@@ -2,6 +2,7 @@ extends Node2D
 class_name tile 
 
 var sprite_size = 16
+var pos : Vector2
 
 ##mouse events for the tile
 func _input(event):
@@ -14,4 +15,12 @@ func _input(event):
 				onClick(false)
 
 func onClick(left):
-	pass
+	if left:
+		##if this is the first tile being clicked remove a set around it
+		if StateManager.first_tile == false:
+			StateManager.world.random_tile_remove(pos)
+			StateManager.first_tile = true
+		
+		##logic to remove tile (queue_free())
+	else:
+		pass #right click on tiles

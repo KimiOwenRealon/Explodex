@@ -4,10 +4,13 @@ class_name tile
 var sprite_size = 16
 var pos : Vector2
 var bomb : bool = false
-var adjactent_tiles : int
+var adjactent_bombs : int = 0
+@onready var sprite = $Sprite2D
+
 
 ##mouse events for the tile
 func _input(event):
+	$RichTextLabel.text = str(adjactent_bombs)
 	if event is InputEventMouseButton and event.pressed:
 		var local_mouse_pos = get_local_mouse_position()
 		if abs(local_mouse_pos.x) < sprite_size/2 and abs(local_mouse_pos.y) < sprite_size/2:
@@ -26,3 +29,5 @@ func onClick(left):
 		##logic to remove tile (queue_free())
 	else:
 		pass #right click on tiles
+
+	

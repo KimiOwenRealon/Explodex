@@ -10,7 +10,6 @@ var tiles = {} #tile dictionary
 var mine_array = []
 #sets up initial tile grid
 func create_grid():
-
 	for i in range(0, board_size_x):
 		for j in range(0, board_size_y):
 			##instantiate the tile
@@ -38,12 +37,19 @@ func random_tile_remove(start_pos : Vector2):
 			t.queue_free()
 	spawn_bombs()
 
-##take our array of all tiles and select a hanful to be a bomb
+##take our array of all tiles and select a handfull to be a bomb
 func spawn_bombs():
 	mine_array.shuffle()
 	mine_array = mine_array.slice(0,StateManager.max_bombs)
 	for i in mine_array:
 		i.bomb = true
+		i.sprite.visible = false
+		for x in range(i.pos.x-1, i.pos.x+2):
+			for y in range(i.pos.y-1, i.pos.y+2):
+				if tiles.has(Vector2(x,y)):
+					tiles[Vector2(x,y)].adjactent_bombs += 1
+		
+
 
 func _ready():
 	StateManager.world = self

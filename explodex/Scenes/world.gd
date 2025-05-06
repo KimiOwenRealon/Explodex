@@ -48,4 +48,3 @@ func spawn_bombs(pos : Vector2i):
 func _ready():
 	StateManager.world = self
 	create_grid()
-

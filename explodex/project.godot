@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Explodex"
-run/main_scene="uid://ctq5bwxyhv6uk"
+run/main_scene="uid://57x2dica28kb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 SoundManager="*res://scripts/SoundManager.gd"
 StateManager="*res://scripts/StateManager.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://i1mgn2tl4erl"]
+[gd_scene load_steps=7 format=3 uid="uid://i1mgn2tl4erl"]
 
 [ext_resource type="Script" uid="uid://ll6ibjwjbokl" path="res://TileSystem/tile.gd" id="1_em5vh"]
 [ext_resource type="Texture2D" uid="uid://djh7k7qpq7ap0" path="res://Sprites/DevSprites/square.png" id="1_ht7x0"]
@@ -12,6 +12,8 @@ shader_parameter/sprite_color = Color(0.838897, 0.838897, 0.838897, 1)
 shader = ExtResource("3_sl6ug")
 shader_parameter/sprite_color = Color(1, 1, 1, 1)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sl6ug"]
+
 [node name="Tile" type="Node2D"]
 script = ExtResource("1_em5vh")
 
@@ -23,3 +25,12 @@ texture = ExtResource("1_ht7x0")
 material = SubResource("ShaderMaterial_uec1m")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_ht7x0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+material = SubResource("CanvasItemMaterial_sl6ug")
+offset_left = -4.0
+offset_top = -11.0
+offset_right = 104.0
+offset_bottom = 49.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "1"

@@ -14,3 +14,4 @@ func _input(event):
 			if event.is_action("right_click"):
 				
 				pass #remove "pass" after adding any code
+ 

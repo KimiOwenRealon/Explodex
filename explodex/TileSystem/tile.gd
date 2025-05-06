@@ -27,6 +27,8 @@ func onClick(left):
 			cascadeRemove()
 		
 		##logic to remove tile (queue_free())
+		if bomb:
+			SoundManager.play(0)
 		cascadeRemove()
 		remove_tile()
 	else:
@@ -40,8 +42,7 @@ func cascadeRemove(last : tile = null, visited := {}):
 	if visited.has(pos):
 		return
 	visited[pos] = true
-	
-	print(StateManager.world.tiles.size())
+
 	
 	#loop through adjacent tiles (ignoring diagonals)
 	var directions = [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,1),Vector2i(0,-1)]

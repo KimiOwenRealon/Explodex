@@ -24,7 +24,6 @@ func create_grid():
 			tiles.set(Vector2i(i,j), ti)
 			mine_array.append(ti)
 
-
 ##take our array of all tiles and select a handfull to be a bomb
 func spawn_bombs(pos : Vector2i):
 	##shuffle an array of all tiles to randomly select bombs
@@ -48,4 +47,3 @@ func spawn_bombs(pos : Vector2i):
 func _ready():
 	StateManager.world = self
 	create_grid()
-

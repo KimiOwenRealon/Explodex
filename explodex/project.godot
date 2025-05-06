@@ -15,17 +15,15 @@ run/main_scene="uid://57x2dica28kb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-
-[display]
-
-window/size/mode=3
-window/stretch/mode="canvas_items"
-
 [autoload]
 
 SoundManager="*res://scripts/SoundManager.gd"
 StateManager="*res://scripts/StateManager.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [input]
 

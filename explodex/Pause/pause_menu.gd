@@ -13,3 +13,4 @@ func _on_restart_button_down() -> void:
 
 func _on_quit_button_down() -> void:
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+ 
